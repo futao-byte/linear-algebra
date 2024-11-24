@@ -1,9 +1,3 @@
----
-title: "Habits"
-author: John Doe
-date: March 22, 2005
-output: pdf_document
----
 # linear-algebra
 ## 1 二阶方阵的逆矩阵
 A的逆矩阵： $AA^{-1} = A^{-1}A = I \Leftrightarrow A^{-1} = \frac{1}{\left|x\right|} A^{*}$
@@ -44,3 +38,7 @@ $$ A^{-1} = \frac{1}{\left|x\right|} \begin{bmatrix}
 
 -https://tchel.github.io/2018/09/29/The-Inverse-Matrix-of-2x2/
 
+## 2 对称多项式
+在n元置换下保持不变的多项式就是对称多项式。
+
+例如: $f(x_1,x_2) = x_1^2 + x_1x_2 + x_2^4$ , 把 $x_1和x_2$ 互换位置，很显然多项式保持不变。
