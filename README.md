@@ -1,3 +1,9 @@
+---
+title: "Habits"
+author: John Doe
+date: March 22, 2005
+output: pdf_document
+---
 # linear-algebra
 ## 1 二阶方阵的逆矩阵
 A的逆矩阵： $AA^{-1} = A^{-1}A = I \Leftrightarrow A^{-1} = \frac{1}{\left|x\right|} A^{*}$
@@ -37,3 +43,4 @@ $$ A^{-1} = \frac{1}{\left|x\right|} \begin{bmatrix}
 -https://zh.wikipedia.org/zh-cn/%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5
 
 -https://tchel.github.io/2018/09/29/The-Inverse-Matrix-of-2x2/
+
