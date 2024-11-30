@@ -93,3 +93,72 @@ $$A = \begin{bmatrix}
 目标：预测n年后的状态：$x_n = A^{n}x_o$
 如果矩阵A可对角化，那就简单多了， P = $DAD^{-1}$， $P^n = DA^{n}D^{-1}$， $P^{n} = diag(\lambda_{1}^{n},\lambda_{2}^{n},...,\lambda_{n}^{n})$。
 
+## 3 斐波那契额数列
+
+这个核心思想是构造一个能呈现出斐波那契数列递归规律的矩阵，然后通过2中的思想来解方程。
+
+$$ A = \begin{bmatrix}
+0&1 \\
+1&1
+\end{bmatrix}$$
+
+$$ A^2 = \begin{bmatrix}
+1&1 \\
+1&2
+\end{bmatrix}$$
+
+$$ A^3 = \begin{bmatrix}
+1&2 \\
+2&3
+\end{bmatrix}$$
+
+$$ A^4 = \begin{bmatrix}
+2&3 \\
+3&5
+\end{bmatrix}$$
+
+$$ A^5 = \begin{bmatrix}
+3&5 \\
+5&8
+\end{bmatrix}$$
+
+$$ \left| A - \lambda I \right| = \lambda^2-\lambda-1=0$$
+
+
+$$\lambda_1 = \frac{1-\sqrt{5}}{2}, \quad v_1 = \begin{pmatrix} -1 ,  \frac{\sqrt{5} - 1}{2} \end{pmatrix}$$
+
+
+$$\lambda_2 = \frac{1+\sqrt{5}}{2}, \quad v_2 = \begin{pmatrix} 1 ,   \frac{\sqrt{5} + 1}{2} \end{pmatrix}$$
+
+$$ B = \begin{bmatrix}
+-1&1 \\
+\frac{\sqrt{5}-1}{2}&\frac{\sqrt{5}+1}{2}
+\end{bmatrix}$$
+
+$$ P = \begin{bmatrix}
+\frac{\sqrt{5}-1}{2}&0 \\
+0&\frac{\sqrt{5}+1}{2}
+\end{bmatrix}$$
+
+$$ P^n = \begin{bmatrix}
+(\frac{\sqrt{5}-1}{2})^n&0 \\
+0&(\frac{\sqrt{5}+1}{2})^n
+\end{bmatrix}$$
+
+可以说是 $B^{-1}AB = P$, 也就是 $A = BPB^{-1}$, $B^{-1}A^{m}B = P^m$。<br>
+而 $A^m$我们已经知道了：
+
+$$ A^m = \begin{bmatrix}
+f_{m-1}&f_m \\
+f_m&f_{m+1}
+\end{bmatrix}$$
+
+所以， $A^{m} = BP^{m}B^{-1}$, 仅观察  $BP^{m}B^{-1}$的右上角那个元素就会发现：
+
+$$ \frac{\lambda_{1}^{m}-\lambda_{2}^{m}}{-\sqrt{5}} = f_{m} $$
+
+$$f_m = \frac{\left(\frac{1 + \sqrt{5}}{2}\right)^m - \left(\frac{1 - \sqrt{5}}{2}\right)^m}{\sqrt{5}}$$
+
+这正是斐波那契数列的通项公式。（精彩！）
+
+## 4 CS线性代数补充课
